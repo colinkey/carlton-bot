@@ -4,9 +4,69 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Carlton: A Twitch bot for managing OBS scenes from chat</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <h1>Carlton was here</h1>
+        <div class="outer-container">
+            <div class="inner-container left-container">
+                <div class="title-container">
+                    <h1>Hi, I'm Carlton</h1>
+                    <h2>I'm in ur chat, switchin' ur scenes.</h2>
+                    <p>(and telling jokes from 2005)</p>
+                </div>
+                <div class="basic-instructions">
+                    <h2>How-to</h2>
+                    <p>Set up your scenes on the right! Here's a quick rundown of your options:</p>
+                        <ul>
+                            <li>The <strong>Label</strong> is your name for the scene (sync it up with your OBS scene for clarity!)</li>
+                            <li>Use the <strong>Active?</strong> checkbox to tell me if that scene is available for switchin'</li>
+                            <li>You'll need to <strong>Calibrate</strong> your scenes before I can switch them. Do this by selecting <strong>Calibrate</strong> and left-clicking the scene in OBS while holding down the CTRL key.</li>
+                            <li>For additional settings, look under the {gear} icon.</li>
+                        </ul>
+                </div>
+            </div>
+            <div class="inner-container right-container">
+                <div class="scene-container">
+                    <div class="scene-info">
+                        <p class="scene-index">Scene 1</p>
+                        <h2 class="scene-label">Benjamin</h2>
+                        <p class="scene-chat-command">Chat command: !Benjamin</p>
+                    </div>
+                    <div class="scene-actions">
+                        <input type="checkbox" name="scene-1-active"><label for="scene-1-active">Active?</label>
+                        <button class="delete-scene scene-button" onclick="">delete scene</button>
+                    </div>
+                </div>
+                <div class="scene-container">
+                    <div class="scene-info">
+                        <p class="scene-index">Scene 2</p>
+                        <h2 class="scene-label">Jake</h2>
+                        <p class="scene-chat-command">Chat command: !Jake</p>
+                    </div>
+                    <div class="scene-actions">
+                        <input type="checkbox" name="scene-1-active"><label for="scene-2-active">Active?</label>
+                        <button class="delete-scene scene-button" onclick="">delete scene</button>
+                    </div>
+                </div>
+                <div class="scene-container">
+                    <div class="scene-info">
+                        <p class="scene-index">Scene 3</p>
+                        <h2 class="scene-label">Greg</h2>
+                        <p class="scene-chat-command">Chat command: !Greg</p>
+                    </div>
+                    <div class="scene-actions">
+                        <input type="checkbox" name="scene-1-active"><label for="scene-3-active">Active?</label>
+                        <button class="delete-scene scene-button" onclick="">delete scene</button>
+                    </div>
+                </div>
+                <div class="scene-control-buttons">
+                    <button class="calibrate scene-button" onclick="calibrateScenes()">calibrate</button>
+                    <button class="new-scene scene-button" onclick="">new scene</button>
+                </div>
+            </div>
+        </div>
+        <script src="app.js"></script>
     </body>
 </html>
