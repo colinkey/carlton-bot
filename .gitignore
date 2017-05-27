@@ -1,3 +1,4 @@
 /.creds.json
 /test.js
 /test.ahk
+/node_modules
