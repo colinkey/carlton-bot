@@ -4,7 +4,7 @@
   "description": "A twitch bot to switch OBS scenes from chat",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -13,7 +13,7 @@
   "author": "Colin Key",
   "license": "ISC",
   "dependencies": {
-    "electron": "^1.6.8",
+    "electron": "~1.6.2",
     "tmi.js": "^1.2.0"
   }
 }
