@@ -61,15 +61,15 @@ function AHKSwtichScene(obj) {
     } else {
         switch(obj.label) {
             case 'Jake':
-            callAHK('start scene-switch-' + obj.label + '.ahk')
+            callAHK('start scripts/scene-switch-' + obj.label + '.ahk')
             return 'Switched to ' + obj.label
 
             case 'Benjamin':
-            callAHK('start scene-switch-' + obj.label + '.ahk')
+            callAHK('start scripts/scene-switch-' + obj.label + '.ahk')
             return 'Switched to ' + obj.label
             
             case 'Greg':
-            callAHK('start scene-switch-' + obj.label + '.ahk')
+            callAHK('start scripts/scene-switch-' + obj.label + '.ahk')
             return 'Switched to ' + obj.label
         }
     }
@@ -85,7 +85,7 @@ function callAHK(path) {
 }
 
 function calibrateScenes() {
-    let child = exec('start iniwriter.ahk', (error, stdout, stderr) => {
+    let child = exec('start scripts/iniwriter.ahk', (error, stdout, stderr) => {
         if (error) {
             throw error
         }
