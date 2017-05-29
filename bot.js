@@ -40,16 +40,16 @@ const options = {
 //         client.action(channel, social.github)
 //         break
 
-//         case scenes.Scene1.chatCommand:
-//         client.action(channel, AHKSwtichScene(scenes.Scene1))
+//         case scenes[1].chatCommand:
+//         client.action(channel, AHKSwtichScene(scenes[1]))
 //         break
 
-//         case scenes.Scene2.chatCommand:
-//         client.action(channel, AHKSwtichScene(scenes.Scene2))
+//         case scenes[2].chatCommand:
+//         client.action(channel, AHKSwtichScene(scenes[2]))
 //         break
 
-//         case scenes.Scene3.chatCommand:
-//         client.action(channel, AHKSwtichScene(scenes.Scene3))
+//         case scenes[3].chatCommand:
+//         client.action(channel, AHKSwtichScene(scenes[3]))
 //         break
 
 //     }
