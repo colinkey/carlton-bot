@@ -1,6 +1,7 @@
+<?xml-stylesheet type="text/css" href="svg-styles.css"?>
 <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 100" x="0px" y="0px">
 <title>delete</title>
-<path d="M69.09,39.39,58.49,50,69.09,60.61l-8.49,8.49L50,58.49,39.39,69.09l-8.49-8.49L41.51,50,30.91,39.39l8.49-8.49L50,41.52,60.61,30.91ZM83.94,16.06a48,48,0,1,1-67.88,0A48,48,0,0,1,83.94,16.06Zm-8.49,8.49a36,36,0,1,0,0,50.91A36,36,0,0,0,75.46,24.54Z"/>
+<path class="delete-icon icon" d="M69.09,39.39,58.49,50,69.09,60.61l-8.49,8.49L50,58.49,39.39,69.09l-8.49-8.49L41.51,50,30.91,39.39l8.49-8.49L50,41.52,60.61,30.91ZM83.94,16.06a48,48,0,1,1-67.88,0A48,48,0,0,1,83.94,16.06Zm-8.49,8.49a36,36,0,1,0,0,50.91A36,36,0,0,0,75.46,24.54Z"/>
 <!--<text x="0" y="115" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">Created by Gregor Cresnar</text>
 <text x="0" y="120" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</text>-->
 </svg>

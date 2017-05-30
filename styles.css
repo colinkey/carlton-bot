@@ -45,6 +45,7 @@ body {
     border-left: solid 3px #663399;
     display:flex;
     justify-content: space-between;
+    align-content: center;
 }
 
 .scene-index {
@@ -52,7 +53,23 @@ body {
     font-size:.8em;
 }
 
+.scene-actions {
+    margin:auto 0;
+}
+
 .scene-control-buttons {
     display:flex;
     justify-content: space-between;
+}
+
+.icon {
+    width:25px;
+    height:25px;
+    vertical-align: middle;
+    fill:green;
+}
+
+.scene-actions .icon {
+    width:40px;
+    height:40px;
 }
