@@ -7,6 +7,7 @@
         <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="styles.css">
+        <script src="https://use.fontawesome.com/a528178d08.js"></script>
     </head>
     <body>
         <div class="outer-container">
@@ -21,23 +22,19 @@
                     <p>Set up your scenes on the right! Here's a quick rundown of your options:</p>
                         <ul>
                             <li>The <strong>Label</strong> is your name for the scene (sync it up with your OBS scene for clarity!)</li>
-                            <li>Use the <strong>Active?</strong> checkbox to tell me if that scene is available for switchin'</li>
-                            <li>You'll need to <strong>Calibrate</strong> your scenes before I can switch them. Do this by selecting <strong>Calibrate</strong> and left-clicking the scene in OBS while holding down the CTRL key.</li>
-                            <li>For additional settings, look under the <object type="image/svg+xml" data="icons/gear.svg" class="gear-icon icon">SVG Error!</object> icon.</li>
+                            <li>Use the <strong>Active</strong> icon (<i class="fa fa-check fa-lg" aria-hidden="true" style="color:green;"></i>) to tell me if that scene is available for switchin'</li>
+                            <li>You'll need to <strong>Calibrate</strong> your scenes before I can switch them. Do this by selecting <strong>Calibrate</strong> (<i class="fa fa-crosshairs fa-lg" aria-hidden="true"></i>) and left-clicking the scene in OBS while holding down the CTRL key.</li>
+                            <li>For additional settings, look under the <i class="fa fa-cog fa-lg" aria-hidden="true"></i> icon.</li>
                         </ul>
                 </div>
             </div>
             <div class="inner-container right-container">
                 <div class="scene-control-buttons">
-                    <button class="calibrate scene-button" onclick="calibrateScenes()"><object type="image/svg+xml" data="icons/calibrate.svg" class="calibrate-icon icon">SVG Error!</object> Calibrate</button>
-                    <button class="new-scene scene-button" onclick=""><object type="image/svg+xml" data="icons/add.svg" class="add-icon icon">SVG Error!</object> New Scene</button>
+                    <button class="calibrate scene-button" onclick="calibrateScenes()"><i class="fa fa-crosshairs fa-lg" aria-hidden="true"></i> Calibrate</button>
+                    <button class="new-scene scene-button" onclick=""><i class="fa fa-plus fa-lg" aria-hidden="true"></i> New Scene</button>
                 </div>
             </div>
         </div>
-        <!--
-        Credit for icons - add to 'info' modal when created
-        All icons by Gregor Cresnar (https://dribbble.com/Re66y) from the Noun Project (thenounproject.com). 
-        -->
         <script>
             // You can also require other files to run in this process
             require('./renderer.js')

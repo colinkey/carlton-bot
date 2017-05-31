@@ -9,12 +9,13 @@ for (var i = 0; i < scenes.length; i++) {
     <p class="scene-chat-command">Chat command: ' + scenes[i].chatCommand + '</p> \
     </div> \
     <div class="scene-actions"> \
-    <input type="checkbox" class="active-checkbox" name="scene-1-active"><label for="scene-1-active">Active?</label> \
-    <object type="image/svg+xml" data="icons/delete.svg" class="delete-icon icon" alt="Delete scene?">SVG Error!</object>  \
+    <i class="fa fa-check fa-lg active-checkbox" aria-hidden="true" style="color: lightgrey;"></i>  \
+    <i class="fa fa-ban fa-lg" aria-hidden="true" style="color: red;"></i>  \
     </div>'
     let check = newDiv.querySelector('.active-checkbox')
     if (scenes[i].active) {
         check.setAttribute('checked', '')
+        check.style.color = "green"
     }
     sceneContainer.appendChild(newDiv)
 }
