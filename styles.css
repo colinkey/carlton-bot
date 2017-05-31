@@ -9,6 +9,10 @@ body {
     height:96vh;
 }
 
+.purple {
+    color:#663399;
+}
+
 .outer-container {
     margin:auto;
     padding:0;
@@ -64,6 +68,17 @@ body {
 .scene-control-buttons {
     display:flex;
     justify-content: space-between;
+}
+
+.scene-button {
+    padding:10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    border:0;
+    background:#663399;
+    width:130px;
+    font-family:inherit;
+    font-size:inherit;
+    color:white;
 }
 
 i {

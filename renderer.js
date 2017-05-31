@@ -10,12 +10,12 @@ for (var i = 0; i < scenes.length; i++) {
     </div> \
     <div class="scene-actions"> \
     <i class="fa fa-check fa-lg active-checkbox" aria-hidden="true" style="color: lightgrey;"></i>  \
+    <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>  \
     <i class="fa fa-ban fa-lg" aria-hidden="true" style="color: red;"></i>  \
     </div>'
     let check = newDiv.querySelector('.active-checkbox')
-    if (scenes[i].active) {
-        check.setAttribute('checked', '')
+    if (scenes[i].active) { 
         check.style.color = "green"
     }
-    sceneContainer.appendChild(newDiv)
+    sceneContainer.prepend(newDiv)
 }
