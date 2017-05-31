@@ -19,3 +19,7 @@ for (var i = 0; i < scenes.length; i++) {
     }
     sceneContainer.prepend(newDiv)
 }
+
+function showModal() {
+    let modal = window.open('', 'child')
+}

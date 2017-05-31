@@ -84,3 +84,11 @@ body {
 i {
     vertical-align: middle;
 }
+
+.new-scene-input {
+    border-bottom:1px solid;
+}
+
+.new-scene-input:focus {
+    border-bottom:1px solid #663399;
+}

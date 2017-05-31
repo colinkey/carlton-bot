@@ -9,6 +9,15 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({width: 800, height: 600})
+  let child = new BrowserWindow({parent: mainWindow, modal: true, show: false, width:400, height:400})
+  child.loadURL(url.format({
+    pathname: path.join(__dirname, 'modal.html'),
+    protocol: 'file:',
+    slashes: true
+  }))
+  // child.once('ready-to-show', () => {
+  //   child.show()
+  // })
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
