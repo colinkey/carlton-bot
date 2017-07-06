@@ -6,6 +6,9 @@ SetWorkingDir, %A_ScriptDir%
 DetectHiddenWindows, On
 SetTitleMatchMode, 2
 ;==============================================;
+
+MsgBox, Let's calibrate some shit. Open OBS, hold 1 and click on the scene in the Scenes: list to calibrate that scene.
+
 1 & LButton::
 MouseGetPos, benX, benY
 Return
