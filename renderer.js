@@ -1,5 +1,6 @@
 const sceneContainer = document.querySelector('.right-container')
 const calibrateButton = document.querySelector('.calibrate')
+const newSceneButton = document.querySelector('.new-scene')
 const exec = require('child_process').exec
 const Store = require('./store.js')
 
@@ -29,7 +30,7 @@ const store = new Store({
 let data = store.get('scenes')
 
 function renderScenes() {
-    for (var i = 0; i < scenes.length; i++) {
+    for (var i = 0; i < data.length; i++) {
         let newDiv = document.createElement('div')
         newDiv.className = 'scene-container'
         newDiv.innerHTML = '<div class="scene-info"><p class="scene-index">Scene ' + (i + 1) + '</p> \
@@ -76,5 +77,5 @@ function addScene() {
 }
 
 calibrateButton.addEventListener('click', calibrateScenes)
-
+newSceneButton.addEventListener('click', addScene)
 renderScenes()
