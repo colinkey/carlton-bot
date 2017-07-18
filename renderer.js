@@ -1,4 +1,4 @@
-const sceneContainer = document.querySelector('.right-container')
+const sceneContainer = document.querySelector('.scenes')
 const calibrateButton = document.querySelector('.calibrate')
 const newSceneButton = document.querySelector('.new-scene')
 const exec = require('child_process').exec
@@ -27,9 +27,20 @@ const store = new Store({
     }
 })
 
-let data = store.get('scenes')
+let data;
+
+function getData() { 
+    data = store.get('scenes') 
+}
 
 function renderScenes() {
+    getData()
+    sceneContainer.innerHTML = ""
+    // let sceneContainers = document.querySelectorAll(".scene-container")
+    // console.log(sceneContainers)
+    // for (var i in sceneContainers) {
+    //     sceneContainer.removeChild(sceneContainers[i])
+    // }
     for (var i = 0; i < data.length; i++) {
         let newDiv = document.createElement('div')
         newDiv.className = 'scene-container'
