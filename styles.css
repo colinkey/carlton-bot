@@ -85,6 +85,13 @@ i {
     vertical-align: middle;
 }
 
+.new-scene-modal {
+    width:265px;
+    height:265px;
+    display:flex;
+    flex-direction:column;
+}
+
 .new-scene-input {
     border-bottom:1px solid;
 }

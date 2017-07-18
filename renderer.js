@@ -3,6 +3,7 @@ const calibrateButton = document.querySelector('.calibrate')
 const newSceneButton = document.querySelector('.new-scene')
 const exec = require('child_process').exec
 const Store = require('./store.js')
+const { remote } = require('electron');
 
 const store = new Store({
     configName: 'user-preferences',
@@ -36,11 +37,6 @@ function getData() {
 function renderScenes() {
     getData()
     sceneContainer.innerHTML = ""
-    // let sceneContainers = document.querySelectorAll(".scene-container")
-    // console.log(sceneContainers)
-    // for (var i in sceneContainers) {
-    //     sceneContainer.removeChild(sceneContainers[i])
-    // }
     for (var i = 0; i < data.length; i++) {
         let newDiv = document.createElement('div')
         newDiv.className = 'scene-container'
@@ -61,11 +57,6 @@ function renderScenes() {
     }
 }
 
-function showModal() {
-    let modal = window.open('', 'child')
-}
-
-
 function calibrateScenes() {
     console.log('yes')
     let child = exec('start scripts/iniwriter.ahk', (error, stdout, stderr) => {
@@ -83,10 +74,33 @@ function deleteScene() {
 
 function addScene() {
     console.log('add')
-
+    openSceneModal()
+    let modalButton = document.querySelector('.modal-add-scene')
+    // modalButton.addEventListener('click', closeModal())
+    console.log(modalButton)
+    // store.set(scenes, {name, command})
     renderScenes()
 }
 
 calibrateButton.addEventListener('click', calibrateScenes)
 newSceneButton.addEventListener('click', addScene)
 renderScenes()
+
+
+
+function openSceneModal() {
+  let win = new remote.BrowserWindow({
+    parent: remote.getCurrentWindow(),
+    modal: true,
+    width:300,
+    height:300,
+    closable: true
+  })
+  var theUrl = 'file://' + __dirname + '/new-scene-modal.html'
+  win.loadURL(theUrl);
+}
+
+function closeModal() {
+    let window = remote.getCurrentWindow()
+    window.close()
+}
