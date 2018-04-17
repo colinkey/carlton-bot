@@ -13,7 +13,7 @@
   "author": "Colin Key",
   "license": "ISC",
   "dependencies": {
-    "electron": "^1.6.17",
+    "electron": "^1.8.4",
     "obs-websocket-js": "^1.2.0",
     "tmi.js": "^1.2.1"
   }
