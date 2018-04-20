@@ -1,3 +1,5 @@
+//TODO: MAKE SENSE OF THIS NONSENSE
+
 const sceneContainer = document.querySelector(".scenes");
 const calibrateButton = document.querySelector(".calibrate");
 const newSceneButton = document.querySelector(".new-scene");
