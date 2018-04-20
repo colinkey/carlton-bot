@@ -1,23 +1,27 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
+
+import SceneDisplay from "./components/SceneDisplay";
 
 class App extends Component {
   state = {
-    scenes: {
-      Benjamin: {
+    scenes: [
+      {
+        sceneName: "Benjamin",
         chatCommand: "!benjamin",
         active: true
       },
-      Jake: {
+      {
+        sceneName: "Jake",
         chatCommand: "!jake",
         active: false
       },
-      Greg: {
+      {
+        sceneName: "Greg",
         chatCommand: "!greg",
         active: true
       }
-    },
+    ],
     social: {
       github: "http://github.com/colinkey",
       twitter: "http://twitter.com/ckey1010"
@@ -46,7 +50,7 @@ class App extends Component {
                   Use the <strong>Active</strong> icon (<i
                     className="fa fa-check fa-lg"
                     aria-hidden="true"
-                    style="color:green;"
+                    style={{ color: "green" }}
                   />) to tell me if that scene is available for switchin'
                 </li>
                 <li>
@@ -64,7 +68,9 @@ class App extends Component {
             </div>
           </div>
           <div className="inner-container right-container">
-            <div className="scenes" />
+            <div className="scenes">
+              {this.state.scenes.map((scene, i) => <SceneDisplay key={i} sceneInfo={scene} />)}
+            </div>
             <div className="scene-control-buttons">
               <button className="calibrate scene-button">
                 <i className="fa fa-crosshairs fa-lg" aria-hidden="true" /> Calibrate
