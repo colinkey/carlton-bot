@@ -1,20 +1,21 @@
 {
   "name": "carlton-bot",
-  "version": "0.0.1",
-  "description": "A twitch bot to switch OBS scenes from chat",
-  "main": "app.js",
-  "scripts": {
-    "start": "electron ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/colinkey/carlton-bot"
-  },
-  "author": "Colin Key",
-  "license": "ISC",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
     "electron": "^1.8.4",
     "obs-websocket-js": "^1.2.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-scripts": "1.1.4",
     "tmi.js": "^1.2.1"
+  },
+  "main": "src/electron-starter.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron": "electron ."
   }
 }
