@@ -7,6 +7,9 @@ const BrowserWindow = electron.BrowserWindow;
 const path = require("path");
 const url = require("url");
 
+const exec = require("child_process").exec;
+// const bot = require("./src/bot.js");
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
@@ -54,3 +57,16 @@ app.on("activate", function() {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
+function startBotServer(path) {
+  let child = exec(path, (error, stdout, stderr) => {
+    if (error) {
+      throw error;
+    }
+    console.log(stdout);
+  });
+}
+
+// THIS NEEDS TO BE ADJUSTED. TAKE THE PATH OF THE SRC DIRECTORY AND APPEND BOT.JS
+// `${dir}bot.js `
+startBotServer("node ");

@@ -22,10 +22,23 @@ class App extends Component {
         active: true
       }
     ],
+    bot: {
+      active: false
+    },
     social: {
       github: "http://github.com/colinkey",
       twitter: "http://twitter.com/ckey1010"
     }
+  };
+
+  startBotServer = () => {
+    this.setState({
+      ...this.state,
+      bot: {
+        ...this.state.bot,
+        active: !this.state.bot.active
+      }
+    });
   };
 
   render() {
@@ -35,6 +48,9 @@ class App extends Component {
           <div className="inner-container left-container">
             <div className="title-container">
               <h1 className="purple">Hi, I'm Carlton</h1>
+              <button className="power-button" onClick={this.startBotServer}>
+                {this.state.bot.active ? "Stop" : "Start"} Bot!
+              </button>
               <h2>I'm in ur chat, switchin' ur scenes.</h2>
               <p>(and telling jokes from 2005)</p>
             </div>
