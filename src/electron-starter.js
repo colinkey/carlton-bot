@@ -7,7 +7,7 @@ const BrowserWindow = electron.BrowserWindow;
 const path = require("path");
 const url = require("url");
 
-const exec = require("child_process").exec;
+const childProcess = require("child_process");
 // const bot = require("./src/bot.js");
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -32,6 +32,8 @@ function createWindow() {
     mainWindow = null;
   });
 }
+// TODO: This is only need to allow for OBS to display the window. Known bug in Chrome. Leave it or not?
+app.disableHardwareAcceleration();
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
@@ -59,14 +61,11 @@ app.on("activate", function() {
 // code. You can also put them in separate files and require them here.
 
 function startBotServer(path) {
-  let child = exec(path, (error, stdout, stderr) => {
+  let child = childProcess.exec(path, (error, stdout, stderr) => {
     if (error) {
       throw error;
     }
-    console.log(stdout);
   });
 }
 
-// THIS NEEDS TO BE ADJUSTED. TAKE THE PATH OF THE SRC DIRECTORY AND APPEND BOT.JS
-// `${dir}bot.js `
-startBotServer("node ");
+startBotServer(`node ${app.getAppPath()}\\src\\botClient.js`);

@@ -1,17 +1,12 @@
 const tmi = require("tmi.js");
 const exec = require("child_process").exec;
 const creds = require("./.creds.json");
-const OBSWebSocket = require("obs-websocket-js");
 
-const obs = new OBSWebSocket();
-obs.connect({
-  address: "localhost:4444"
-});
+const obsConnection = require("./botConnector.js");
 
-function switchToScene(sceneName) {
-  obs.setCurrentScene({ "scene-name": sceneName });
-  return `Switching to ${sceneName}`;
-}
+const activeConnection = new obsConnection();
+
+activeConnection.connect();
 
 const options = {
   options: {
@@ -49,16 +44,20 @@ client.on("chat", function(channel, userstate, message, self) {
       client.action(channel, "@colinkey");
       break;
 
-    case "!adrian":
-      client.action(channel, switchToScene("Yo Adrian"));
+    case "!code":
+      client.action(channel, activeConnection.switchToScene("Code"));
       break;
 
-    case "!two":
-      client.action(channel, switchToScene("Scene 2"));
+    case "!carlton":
+      client.action(channel, activeConnection.switchToScene("Carlton"));
       break;
 
-    case "!og":
-      client.action(channel, switchToScene("Scene"));
+    case "!workspace":
+      client.action(channel, activeConnection.switchToScene("Workspace"));
+      break;
+
+    case "!scenelist":
+      client.action(channel, activeConnection.getListOfScenes());
       break;
   }
 });
