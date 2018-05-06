@@ -3,7 +3,6 @@ import React from "react";
 const SceneDisplay = props => (
   <div className="scene-container">
     <div className="scene-info">
-      <p className="scene-index">Scene 1</p>
       <h2 className="scene-label">{props.sceneInfo.sceneName}</h2>
       <p className="scene-chat-command">Chat command: {props.sceneInfo.chatCommand}</p>
     </div>

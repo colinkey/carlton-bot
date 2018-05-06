@@ -34,6 +34,18 @@ function createWindow() {
     mainWindow = null;
   });
 
+  electron.ipcMain.on("resize-window", (event, arg) => {
+    if (arg === "expand") {
+      resizeWindow(mainWindow, { width: 800, height: 600 });
+      mainWindow.send("window-resized", "Window set to 800x600");
+    } else if (arg === "shrink") {
+      resizeWindow(mainWindow, { width: 400, height: 600 });
+      mainWindow.send("window-resized", "Window set to 400x600");
+    } else {
+      throw Error("Received resize-window message with invalid argument");
+    }
+  });
+
   electron.ipcMain.on("start-bot-server", event => {
     startBotServer(`node`, [`${app.getAppPath()}\\src\\botClient.js`]);
     mainWindow.send("bot-server-status", "Bot Started!");
@@ -79,4 +91,8 @@ function startBotServer(command, args) {
 
 function stopBotServer() {
   process.kill(botPID);
+}
+
+function resizeWindow(window, size) {
+  window.setSize(size.width, size.height);
 }

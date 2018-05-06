@@ -1,28 +1,88 @@
+.purple {
+  color: #663399;
+}
+
 .App {
-  text-align: center;
+  margin: auto;
+  padding: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.inner-container {
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  padding: 10px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.left-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.title-container h1 {
+  font-size: 4em;
+  font-weight: 100;
+}
+
+.title-container p {
+  font-size: 0.8em;
+}
+
+.scene-container {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  margin: 15px 0;
+  padding: 5px;
+  border-left: solid 3px #663399;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.scene-index {
+  color: #666;
+  font-size: 0.8em;
+}
+
+.scene-actions {
+  margin: auto 0;
+}
+
+.scene-actions i {
+  margin: 0 5px;
+}
+
+.scene-control-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.scene-control-buttons :first-child {
+  border-radius: 3px 0 0 3px;
+}
+
+.scene-control-buttons :last-child {
+  border-radius: 0 3px 3px 0;
+}
+
+.scene-control-buttons :not(:last-child) {
+  border-right: 1px solid white;
+}
+
+.theme-button {
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border: 0;
+  background: #663399;
+  flex: 1;
+  font-family: inherit;
+  font-size: inherit;
   color: white;
 }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+i {
+  vertical-align: middle;
 }
