@@ -14,6 +14,8 @@ const childProcess = require("child_process");
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
 
+let botPID;
+
 function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({ width: 800, height: 600 });
@@ -30,6 +32,16 @@ function createWindow() {
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     mainWindow = null;
+  });
+
+  electron.ipcMain.on("start-bot-server", event => {
+    startBotServer(`node`, [`${app.getAppPath()}\\src\\botClient.js`]);
+    mainWindow.send("bot-server-status", "Bot Started!");
+  });
+
+  electron.ipcMain.on("stop-bot-server", event => {
+    stopBotServer();
+    mainWindow.send("bot-server-status", "Bot Stopped!");
   });
 }
 // TODO: This is only need to allow for OBS to display the window. Known bug in Chrome. Leave it or not?
@@ -60,12 +72,11 @@ app.on("activate", function() {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
 
-function startBotServer(path) {
-  let child = childProcess.exec(path, (error, stdout, stderr) => {
-    if (error) {
-      throw error;
-    }
-  });
+function startBotServer(command, args) {
+  const child = childProcess.spawn(command, args);
+  botPID = child.pid;
 }
 
-startBotServer(`node ${app.getAppPath()}\\src\\botClient.js`);
+function stopBotServer() {
+  process.kill(botPID);
+}

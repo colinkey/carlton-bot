@@ -11,7 +11,12 @@ class BotConnector {
       address: "localhost:4444",
       password: creds.obs.password
     });
-    this.getListOfScenes();
+    // try {
+    //   this.getListOfScenes();
+    // } catch (e) {
+    //   console.log(`Uh-oh! ${e}`);
+    // }
+    // this.getListOfScenes();
   }
 
   switchToScene(sceneName) {
@@ -24,7 +29,7 @@ class BotConnector {
     this.obs.getSceneList().then(data => {
       scenes = data.scenes;
     });
-    return `${scenes.length} scenes available`;
+    console.log(`${scenes.length} scenes available`);
   }
 }
 

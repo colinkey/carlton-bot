@@ -3,6 +3,8 @@ import "./App.css";
 
 import SceneDisplay from "./components/SceneDisplay";
 
+const electron = window.require("electron");
+
 class App extends Component {
   state = {
     scenes: [
@@ -31,7 +33,10 @@ class App extends Component {
     }
   };
 
-  startBotServer = () => {
+  toggleBotServer = () => {
+    this.state.bot.active
+      ? electron.ipcRenderer.send("stop-bot-server")
+      : electron.ipcRenderer.send("start-bot-server");
     this.setState({
       ...this.state,
       bot: {
@@ -41,6 +46,10 @@ class App extends Component {
     });
   };
 
+  componentDidMount() {
+    electron.ipcRenderer.on("bot-server-status", (event, arg) => console.log(arg));
+  }
+
   render() {
     return (
       <div className="App">
@@ -48,7 +57,7 @@ class App extends Component {
           <div className="inner-container left-container">
             <div className="title-container">
               <h1 className="purple">Hi, I'm Carlton</h1>
-              <button className="power-button" onClick={this.startBotServer}>
+              <button className="power-button" onClick={this.toggleBotServer}>
                 {this.state.bot.active ? "Stop" : "Start"} Bot!
               </button>
               <h2>I'm in ur chat, switchin' ur scenes.</h2>
